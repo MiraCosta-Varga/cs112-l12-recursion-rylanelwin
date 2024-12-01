@@ -25,12 +25,9 @@ class Main
     System.out.println("-----------------");
     System.out.printf("Your investment will be $%.2f after %d year(s) at a rate of %.1f%%", iterativeInterestCalc(amount, rate, years), years, rate*100);
 
-
-    //Uncomment this section to see your recursive method in action!
-    
-    // System.out.println("\n\nRecursive Output");
-    // System.out.println("-----------------");
-    // System.out.printf("Your investment will be $%.2f after %d year(s) at a rate of %.1f%%", recursiveInterestCalc(amount, rate, years), years, rate*100);
+    System.out.println("\n\nRecursive Output");
+    System.out.println("-----------------");
+    System.out.printf("Your investment will be $%.2f after %d year(s) at a rate of %.1f%%", recursiveInterestCalc(amount, rate, years), years, rate*100);
   }
 
   /*iterativeInterestCalc method uses a for loop to calulate the new balance in your investment account.*/
@@ -47,7 +44,14 @@ class Main
 
 
   //Start coding here!!
-  /*recursiveInterestCalc method uses recursion to calulate the new balance in your investment account*/
+  public static double recursiveInterestCalc(double amount, double rate, int years) {
+    if (years == 0) {
+      return amount;
+    }
+    double newBalance = amount + (amount * rate);
+    System.out.println("newBalance: " + newBalance);
+    return recursiveInterestCalc(newBalance, rate, years-1);
+  }
   
 
 }
