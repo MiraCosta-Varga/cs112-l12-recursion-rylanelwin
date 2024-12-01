@@ -45,11 +45,15 @@ class Main
 
   //Start coding here!!
   public static double recursiveInterestCalc(double amount, double rate, int years) {
+    
     if (years == 0) {
       return amount;
     }
+
     double newBalance = amount + (amount * rate);
-    System.out.println("newBalance: " + newBalance);
+
+    //System.out.println("newBalance: " + newBalance);
+
     return recursiveInterestCalc(newBalance, rate, years-1);
   }
   
